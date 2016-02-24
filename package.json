@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/indieforger/fs-hapijs-examples/issues"
   },
-  "homepage": "https://github.com/indieforger/fs-hapijs-examples#readme"
+  "homepage": "https://github.com/indieforger/fs-hapijs-examples#readme",
+  "dependencies": {
+    "hapi": "^13.0.0"
+  }
 }
