@@ -6,14 +6,14 @@ const
 
 // add first connection
 server.connection({
-    host: 'localhost',
-    port: process.env.PORT || port
+  host: 'localhost',
+  port: process.env.PORT || port
 })
 
 // add second connection
 server.connection({
-    host: 'localhost',
-    port: process.env.PORT + 1 || port + 1
+  host: 'localhost',
+  port: process.env.PORT + 1 || port + 1
 })
 
 server.route({
@@ -30,8 +30,8 @@ server.route({
 
 // Start the server
 server.start(function () {
-    // Log to the console the host and port info
-    server.connections.forEach((connection) => {
-      console.log(`Server started at: ${connection.info.uri}`)
-    })
+  // Log to the console the host and port info of each connection
+  server.connections.forEach((connection) => {
+    console.log(`Server started at: ${connection.info.uri}`)
+  })
 })
