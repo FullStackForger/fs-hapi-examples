@@ -1,0 +1,19 @@
+{
+  "name": "fs-hapijs-examples",
+  "version": "1.0.0",
+  "description": "HapiJS examples",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indieforger/fs-hapijs-examples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indieforger/fs-hapijs-examples/issues"
+  },
+  "homepage": "https://github.com/indieforger/fs-hapijs-examples#readme"
+}
