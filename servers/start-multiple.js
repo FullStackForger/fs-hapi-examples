@@ -22,8 +22,7 @@ server.route({
 	handler: (request, reply) => {
     // check stackoverflow answer for building full URL
     // http://stackoverflow.com/a/31841704
-    let url = request.connection.info.protocol
-      + '://' + request.info.host
+    let url = request.connection.info.protocol + '://' + request.info.host
     reply(`Hell world from ${url}`)
   }
 })
