@@ -9,8 +9,16 @@ const connection = {
 
 const route = {
     method: 'GET',
-    path: '/',
-    handler: (request, reply) => reply('Hello world from test!')
+    path: '{path*}',
+    handler: (request, reply) => {
+        reply({
+            method: request.method,
+            info: request.info,
+            path: request.path,
+            query: request.query,
+            params: request.params
+        })
+    }
 };
 
 function startHandler(err) {
