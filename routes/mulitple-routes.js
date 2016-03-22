@@ -21,8 +21,9 @@ function defaultHandler (request, reply) {
         request: {
             method: request.method,
             info: request.info,
+            path: request.path,
             query: request.query,
-            path: request.path
+            params: request.params
         },
         url: request.connection.info.protocol + '://' + request.info.host + request.url.path
     });
