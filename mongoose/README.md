@@ -10,4 +10,9 @@ node server.js
 Because node modules are singletons, mongoose connection will persist across different models.
 That also means you have to connect to database before starting server. It is achieved with `./database.js` file.
 
-Oonce connected `mongoose` can be required from inside of models as any other plugin.
+Once connected `mongoose` can be required from inside of models as any other plugin.
+
+**Important**
+
+Above only applies if there is no version conflict between packages, see [mongoose#2669](https://github.com/Automattic/mongoose/issues/2669).
+If the case it is recommended to use [hapi-mongoose](https://github.com/asilluron/hapi-mongoose) plugin.
