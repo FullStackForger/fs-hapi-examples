@@ -13,12 +13,10 @@ exports.register = function (server, options, next) {
 	let settings = Hoek.applyToDefaults(defaults, options);
 
 	Mongoose.connection.on('error', (error) => {
-		console.log('mongo connection error');
-		// throw error
+		next(error);
 	});
 
 	Mongoose.connection.once('open', () => {
-		console.log('mongo connection established');
 		next();
 	});
 
