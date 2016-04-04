@@ -20,6 +20,10 @@ exports.register = function (server, options, next) {
 		next();
 	});
 
+	Mongoose.connection.once('disconnected', () => {
+		Mongoose.connection.removeAllListeners('error');
+	});
+
 	Mongoose.connect('mongodb://' + settings.database.host + '/' + settings.database.db);
 };
 

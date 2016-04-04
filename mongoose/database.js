@@ -12,5 +12,8 @@ exports.connect = function () {
 			console.log('mongo connection established');
 			resolve();
 		});
+		Mongoose.connection.once('disconnected', () => {
+			Mongoose.connection.removeAllListeners('error');
+		});
 	});
 };
