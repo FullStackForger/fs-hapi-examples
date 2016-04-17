@@ -1,12 +1,11 @@
-const
-  Hapi = require('hapi'),
-  server = new Hapi.Server()
+const Hapi = require('hapi');
+const server = new Hapi.Server();
 
 // register connection
 server.connection({
   port: process.env.PORT || 3000,
   host: 'localhost'
-})
+});
 
 // create route object
 const route = {
@@ -17,19 +16,19 @@ const route = {
     path: request.connection.info.protocol +
       '://' + request.info.host + request.url.path
   })
-}
+};
 
 // register route
-server.route(route)
+server.route(route);
 
 // create a plugin registering same route
 var plugin = {
   register: function (server, options, next) {
-    server.route(route)
+    server.route(route);
     next()
   }
-}
-plugin.register.attributes = { name: 'plugin' }
+};
+plugin.register.attributes = { name: 'plugin' };
 
 // register plugin
 server.register(plugin, {
@@ -47,4 +46,4 @@ server.register(plugin, {
   server.start(() => {
     console.log(`Server started at: ${server.info.uri}`)
   })
-})
+});
