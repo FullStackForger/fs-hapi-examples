@@ -34,7 +34,6 @@ plugin2.attributes = { name: 'plugin2' };
 // plugin 1 will respond to:
 // http://localhost:3000/plugin1
 // http://localhost:3001/plugin1
-// http://localhost:3002/plugin2
 server.register(plugin1, function (err) {
   if (err) throw err
 
